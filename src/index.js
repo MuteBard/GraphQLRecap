@@ -5,6 +5,7 @@ import { GraphQLServer } from 'graphql-yoga'
 //contains the five scalar types example:
 const typeDefs = `
     type Query {
+        getBugBaseOnMonth(month : String!) : String!
         me: User!
         post: Post!
     }
@@ -26,6 +27,12 @@ const typeDefs = `
 //Resolvers
 const resolvers = {
     Query: {
+
+
+        getBugBaseOnMonth(parent, args, ctx, info){
+            console.log(args)
+            return `This is the list of bugs on ${args.month}: Bee`
+        },
         me() {
             return {
                 id : "123abc",
