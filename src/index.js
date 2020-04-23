@@ -175,7 +175,7 @@
 // //     }
 // //   }
 
-import { GraphQLServer } from 'graphql-yoga'
+import { GraphQLServer, PubSub} from 'graphql-yoga'
 
 //Type-definitions (schema)
 
@@ -216,6 +216,8 @@ let user = {
     img : "mutebard.jpg",
 }
 
+const pubsub = new PubSub()
+
 const typeDefs = `
     type Query {
         getUser : User!
@@ -227,6 +229,9 @@ const typeDefs = `
         catchBug : User!
         catchFish : User!
         hardCreateUser(data : addUser): User!
+    }
+    type Subscription{
+        count : Int!
     }
 
     input addUser{
@@ -293,7 +298,7 @@ const resolvers = {
             return user
         },
         hardCreateUser(parent, args, ctx, info){
-            let newUser = {
+            letnewUser = {
                 id : 1,
                 fishingPoleLvl : 0,
                 bugNetLvl : 0,
@@ -326,11 +331,30 @@ const resolvers = {
             if(args.prices.length == 0) return 0
             else return Math.floor((args.prices.reduce((sum, elem) => elem + sum))/args.prices.length)
         }
+    },
+
+    Subscription :  {
+        count : {
+            subscribe(parent, args, {pubsub}, info){
+                let count = 0
+                setInterval(() => {
+                    count++
+                    pubsub.publish('count', {
+                        count
+                    })
+                },1000)
+                return pubsub.asyncIterator('count')
+            }
+        }
     }
 }
 
+const context = {
+    pubsub
+}
+
 const server = new GraphQLServer({
-    typeDefs,resolvers
+    typeDefs,resolvers,context
 })
 
 server.start(() => {
