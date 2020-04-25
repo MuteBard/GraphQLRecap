@@ -13,5 +13,8 @@ object Bug_ {
 		img : String
 	)
 	//Arguments
-	case class monthArgs(month : String)
+	case class bugMonthsArgs(months : List[String])
+	case class bugIdArgs(bugId : String)
+	case class bugNameArgs(name : String)
+
 }

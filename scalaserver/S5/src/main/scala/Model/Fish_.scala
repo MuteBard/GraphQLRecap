@@ -5,7 +5,7 @@ object Fish_ {
 	//Model
 	case class Fish(
 		_id : Int,
-		FishId : String,
+		fishId : String,
 		name : String,
 		bells : Int,
 		availability : List[String],
@@ -13,5 +13,7 @@ object Fish_ {
 		img : String
 	)
 	//Arguments
-	case class monthArgs(month : String)
+	case class fishMonthsArgs(months : List[String])
+	case class fishIdArgs(fishId : String)
+	case class fishNameArgs(name : String)
 }

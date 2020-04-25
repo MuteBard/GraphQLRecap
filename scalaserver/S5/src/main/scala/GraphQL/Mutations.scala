@@ -5,11 +5,11 @@ import zio.UIO
 
 object Mutations {
 
-	case class Mutations(
-	  catchFish : UIO[User]
-	)
-
-	val cbs : CrossingBotService = new CBS()
-
-	val allMutations = Mutations(cbs.catchFish)
+//	case class Mutations(
+//	  catchFish : UIO[User]
+//	)
+//
+//	val cbs : CrossingBotService = new CBS()
+//
+//	val allMutations = Mutations(cbs.catchFish)
 }

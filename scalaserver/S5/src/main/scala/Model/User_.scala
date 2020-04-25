@@ -15,4 +15,7 @@ object User_ {
 		img : String = "",
 	)
 
+	case class usernameArgs(username : String)
+	case class sellCreatureArgs(username : String, creaturename : String, species : String)
+
 }

@@ -4,7 +4,7 @@
 		module="udemy-akka-http_2.13"
 		revision="0.1"
 		status="integration"
-		publication="20200424200002"
+		publication="20200425124941"
 	>
 		<description>
 		udemy-akka-http
@@ -32,6 +32,11 @@
 	<dependencies>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.13.1" conf="scala-tool->default,optional(default)"/>
 		<dependency org="org.scala-lang" name="scala-library" rev="2.13.1" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="com.lightbend.akka" name="akka-stream-alpakka-mongodb_2.13" rev="2.0.0-RC2" conf="compile->default(compile)"/>
+		<dependency org="org.mongodb.scala" name="mongo-scala-driver_2.13" rev="2.9.0" conf="compile->default(compile)"/>
+		<dependency org="ch.megard" name="akka-http-cors_2.13" rev="0.4.2" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-actor_2.13" rev="2.6.1" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-stream_2.13" rev="2.6.1" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.akka" name="akka-http_2.13" rev="10.1.11" conf="compile->default(compile)"/>
 		<dependency org="dev.zio" name="zio_2.13" rev="1.0.0-RC18-2" conf="compile->default(compile)"/>
 		<dependency org="com.github.ghostdogpr" name="caliban_2.13" rev="0.7.5" conf="compile->default(compile)"/>
