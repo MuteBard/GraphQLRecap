@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="udemy-akka-http"
+		module="udemy-akka-http_2.13"
+		revision="0.1"
+		conf="runtime"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
+		date="20200424200003"/>
+	<dependencies>
+		<module organisation="de.heikoseeberger" name="akka-http-circe_2.13">
+			<revision name="1.31.0" status="release" pubdate="20200208114315" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/hseeberger/akka-http-json" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="29">
+				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3521" time="0" location="/Users/mutebard/.ivy2/cache/de.heikoseeberger/akka-http-circe_2.13/ivy-1.31.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/de/heikoseeberger/akka-http-circe_2.13/1.31.0/akka-http-circe_2.13-1.31.0.pom"/>
+				<caller organisation="udemy-akka-http" name="udemy-akka-http_2.13" conf="compile, runtime" rev="1.31.0" rev-constraint-default="1.31.0" rev-constraint-dynamic="1.31.0" callerrev="0.1"/>
+				<artifacts>
+					<artifact name="akka-http-circe_2.13" type="jar" ext="jar" status="no" details="" size="27769" time="0" location="/Users/mutebard/.ivy2/cache/de.heikoseeberger/akka-http-circe_2.13/jars/akka-http-circe_2.13-1.31.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/de/heikoseeberger/akka-http-circe_2.13/1.31.0/akka-http-circe_2.13-1.31.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.circe" name="circe-parser_2.13">
+			<revision name="0.13.0" status="release" pubdate="20200207191809" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/circe/circe" extra-info.apiURL="https://circe.github.io/circe/api/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="35">
+				<license name="Apache 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3082" time="0" location="/Users/mutebard/.ivy2/cache/io.circe/circe-parser_2.13/ivy-0.13.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/circe/circe-parser_2.13/0.13.0/circe-parser_2.13-0.13.0.pom"/>
+				<caller organisation="de.heikoseeberger" name="akka-http-circe_2.13" conf="default, compile, runtime, master" rev="0.13.0" rev-constraint-default="0.13.0" rev-constraint-dynamic="0.13.0" callerrev="1.31.0"/>
+				<artifacts>
+					<artifact name="circe-parser_2.13" type="jar" ext="jar" status="no" details="" size="2803" time="0" location="/Users/mutebard/.ivy2/cache/io.circe/circe-parser_2.13/jars/circe-parser_2.13-0.13.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/circe/circe-parser_2.13/0.13.0/circe-parser_2.13-0.13.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.circe" name="circe-jawn_2.13">
+			<revision name="0.13.0" status="release" pubdate="20200207191618" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/circe/circe" extra-info.apiURL="https://circe.github.io/circe/api/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="36">
+				<license name="Apache 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3081" time="0" location="/Users/mutebard/.ivy2/cache/io.circe/circe-jawn_2.13/ivy-0.13.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/circe/circe-jawn_2.13/0.13.0/circe-jawn_2.13-0.13.0.pom"/>
+				<caller organisation="io.circe" name="circe-parser_2.13" conf="compile, runtime" rev="0.13.0" rev-constraint-default="0.13.0" rev-constraint-dynamic="0.13.0" callerrev="0.13.0"/>
+				<artifacts>
+					<artifact name="circe-jawn_2.13" type="jar" ext="jar" status="no" details="" size="26187" time="0" location="/Users/mutebard/.ivy2/cache/io.circe/circe-jawn_2.13/jars/circe-jawn_2.13-0.13.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/circe/circe-jawn_2.13/0.13.0/circe-jawn_2.13-0.13.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.typelevel" name="jawn-parser_2.13">
+			<revision name="1.0.0" status="release" pubdate="20200118130924" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/typelevel/jawn" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="37">
+				<license name="MIT" url="http://opensource.org/licenses/MIT"/>
+				<metadata-artifact status="no" details="" size="2882" time="0" location="/Users/mutebard/.ivy2/cache/org.typelevel/jawn-parser_2.13/ivy-1.0.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/typelevel/jawn-parser_2.13/1.0.0/jawn-parser_2.13-1.0.0.pom"/>
+				<caller organisation="io.circe" name="circe-jawn_2.13" conf="compile, runtime" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="0.13.0"/>
+				<artifacts>
+					<artifact name="jawn-parser_2.13" type="jar" ext="jar" status="no" details="" size="82368" time="0" location="/Users/mutebard/.ivy2/cache/org.typelevel/jawn-parser_2.13/jars/jawn-parser_2.13-1.0.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/typelevel/jawn-parser_2.13/1.0.0/jawn-parser_2.13-1.0.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.github.ghostdogpr" name="caliban-akka-http_2.13">
+			<revision name="0.7.5" status="release" pubdate="20200415073018" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/ghostdogpr/caliban" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="19">
+				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3421" time="0" location="/Users/mutebard/.ivy2/cache/com.github.ghostdogpr/caliban-akka-http_2.13/ivy-0.7.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/github/ghostdogpr/caliban-akka-http_2.13/0.7.5/caliban-akka-http_2.13-0.7.5.pom"/>
+				<caller organisation="udemy-akka-http" name="udemy-akka-http_2.13" conf="compile, runtime" rev="0.7.5" rev-constraint-default="0.7.5" rev-constraint-dynamic="0.7.5" callerrev="0.1"/>
+				<artifacts>
+					<artifact name="caliban-akka-http_2.13" type="jar" ext="jar" status="no" details="" size="57322" time="0" location="/Users/mutebard/.ivy2/cache/com.github.ghostdogpr/caliban-akka-http_2.13/jars/caliban-akka-http_2.13-0.7.5.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/github/ghostdogpr/caliban-akka-http_2.13/0.7.5/caliban-akka-http_2.13-0.7.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-stream_2.13">
+			<revision name="2.6.4" status="release" pubdate="20200313092433" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://akka.io/" extra-info.apiURL="https://doc.akka.io/api/akka/2.6.4" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="20">
+				<license name="Apache-2.0" url="https://www.apache.org/licenses/LICENSE-2.0.html"/>
+				<metadata-artifact status="no" details="" size="3799" time="0" location="/Users/mutebard/.ivy2/cache/com.typesafe.akka/akka-stream_2.13/ivy-2.6.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-stream_2.13/2.6.4/akka-stream_2.13-2.6.4.pom"/>
+				<caller organisation="com.github.ghostdogpr" name="caliban-akka-http_2.13" conf="default, compile, runtime, master" rev="2.6.4" rev-constraint-default="2.6.4" rev-constraint-dynamic="2.6.4" callerrev="0.7.5"/>
+				<caller organisation="de.heikoseeberger" name="akka-http-circe_2.13" conf="default, compile, runtime, master" rev="2.6.3" rev-constraint-default="2.6.3" rev-constraint-dynamic="2.6.3" callerrev="1.31.0"/>
+				<artifacts>
+					<artifact name="akka-stream_2.13" type="jar" ext="jar" status="no" details="" size="4663009" time="0" location="/Users/mutebard/.ivy2/cache/com.typesafe.akka/akka-stream_2.13/jars/akka-stream_2.13-2.6.4.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-stream_2.13/2.6.4/akka-stream_2.13-2.6.4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="2.6.3" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+				<evicted-by rev="2.6.4"/>
+				<caller organisation="de.heikoseeberger" name="akka-http-circe_2.13" conf="default, compile, runtime, master" rev="2.6.3" rev-constraint-default="2.6.3" rev-constraint-dynamic="2.6.3" callerrev="1.31.0"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe" name="ssl-config-core_2.13">
+			<revision name="0.4.1" status="release" pubdate="20191114174535" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/lightbend/ssl-config" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="27">
+				<license name="Apache-2.0" url="https://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3716" time="0" location="/Users/mutebard/.ivy2/cache/com.typesafe/ssl-config-core_2.13/ivy-0.4.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/ssl-config-core_2.13/0.4.1/ssl-config-core_2.13-0.4.1.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-stream_2.13" conf="compile, runtime" rev="0.4.1" rev-constraint-default="0.4.1" rev-constraint-dynamic="0.4.1" callerrev="2.6.4"/>
+				<artifacts>
+					<artifact name="ssl-config-core_2.13" type="bundle" ext="jar" status="no" details="" size="302642" time="0" location="/Users/mutebard/.ivy2/cache/com.typesafe/ssl-config-core_2.13/bundles/ssl-config-core_2.13-0.4.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/ssl-config-core_2.13/0.4.1/ssl-config-core_2.13-0.4.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang.modules" name="scala-parser-combinators_2.13">
+			<revision name="1.1.2" status="release" pubdate="20190607143535" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="28">
+				<license name="Apache-2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2927" time="0" location="/Users/mutebard/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.13/ivy-1.1.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.13/1.1.2/scala-parser-combinators_2.13-1.1.2.pom"/>
+				<caller organisation="com.typesafe" name="ssl-config-core_2.13" conf="compile, runtime" rev="1.1.2" rev-constraint-default="1.1.2" rev-constraint-dynamic="1.1.2" callerrev="0.4.1"/>
+				<artifacts>
+					<artifact name="scala-parser-combinators_2.13" type="bundle" ext="jar" status="no" details="" size="225338" time="0" location="/Users/mutebard/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.13/bundles/scala-parser-combinators_2.13-1.1.2.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.13/1.1.2/scala-parser-combinators_2.13-1.1.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.reactivestreams" name="reactive-streams">
+			<revision name="1.0.3" status="release" pubdate="20190823045010" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.reactive-streams.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="26">
+				<license name="CC0" url="http://creativecommons.org/publicdomain/zero/1.0/"/>
+				<metadata-artifact status="no" details="" size="2523" time="0" location="/Users/mutebard/.ivy2/cache/org.reactivestreams/reactive-streams/ivy-1.0.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-stream_2.13" conf="compile, runtime" rev="1.0.3" rev-constraint-default="1.0.3" rev-constraint-dynamic="1.0.3" callerrev="2.6.4"/>
+				<artifacts>
+					<artifact name="reactive-streams" type="jar" ext="jar" status="no" details="" size="11369" time="0" location="/Users/mutebard/.ivy2/cache/org.reactivestreams/reactive-streams/jars/reactive-streams-1.0.3.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-protobuf-v3_2.13">
+			<revision name="2.6.4" status="release" pubdate="20200313092045" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://akka.io/" extra-info.apiURL="https://doc.akka.io/api/akka/2.6.4" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="24">
+				<license name="Apache-2.0" url="https://www.apache.org/licenses/LICENSE-2.0.html"/>
+				<metadata-artifact status="no" details="" size="2941" time="0" location="/Users/mutebard/.ivy2/cache/com.typesafe.akka/akka-protobuf-v3_2.13/ivy-2.6.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-protobuf-v3_2.13/2.6.4/akka-protobuf-v3_2.13-2.6.4.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-stream_2.13" conf="compile, runtime" rev="2.6.4" rev-constraint-default="2.6.4" rev-constraint-dynamic="2.6.4" callerrev="2.6.4"/>
+				<artifacts>
+					<artifact name="akka-protobuf-v3_2.13" type="jar" ext="jar" status="no" details="" size="1668691" time="0" location="/Users/mutebard/.ivy2/cache/com.typesafe.akka/akka-protobuf-v3_2.13/jars/akka-protobuf-v3_2.13-2.6.4.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-protobuf-v3_2.13/2.6.4/akka-protobuf-v3_2.13-2.6.4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.google.protobuf" name="protobuf-java">
+			<revision name="3.10.0" status="release" pubdate="20190918205539" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="25">
+				<license name="3-Clause BSD License" url="https://opensource.org/licenses/BSD-3-Clause"/>
+				<metadata-artifact status="no" details="" size="5771" time="0" location="/Users/mutebard/.ivy2/cache/com.google.protobuf/protobuf-java/ivy-3.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.10.0/protobuf-java-3.10.0.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-protobuf-v3_2.13" conf="compile, runtime" rev="3.10.0" rev-constraint-default="3.10.0" rev-constraint-dynamic="3.10.0" callerrev="2.6.4"/>
+				<artifacts>
+					<artifact name="protobuf-java" type="bundle" ext="jar" status="no" details="" size="1664677" time="0" location="/Users/mutebard/.ivy2/cache/com.google.protobuf/protobuf-java/bundles/protobuf-java-3.10.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.10.0/protobuf-java-3.10.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-actor_2.13">
+			<revision name="2.6.4" status="release" pubdate="20200313092122" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://akka.io/" extra-info.apiURL="https://doc.akka.io/api/akka/2.6.4" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="21">
+				<license name="Apache-2.0" url="https://www.apache.org/licenses/LICENSE-2.0.html"/>
+				<metadata-artifact status="no" details="" size="3362" time="0" location="/Users/mutebard/.ivy2/cache/com.typesafe.akka/akka-actor_2.13/ivy-2.6.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.13/2.6.4/akka-actor_2.13-2.6.4.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-stream_2.13" conf="compile, runtime" rev="2.6.4" rev-constraint-default="2.6.4" rev-constraint-dynamic="2.6.4" callerrev="2.6.4"/>
+				<artifacts>
+					<artifact name="akka-actor_2.13" type="jar" ext="jar" status="no" details="" size="3591649" time="0" location="/Users/mutebard/.ivy2/cache/com.typesafe.akka/akka-actor_2.13/jars/akka-actor_2.13-2.6.4.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.13/2.6.4/akka-actor_2.13-2.6.4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang.modules" name="scala-java8-compat_2.13">
+			<revision name="0.9.0" status="release" pubdate="20190608085219" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="23">
+				<license name="Apache-2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3031" time="0" location="/Users/mutebard/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.13/ivy-0.9.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-java8-compat_2.13/0.9.0/scala-java8-compat_2.13-0.9.0.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-actor_2.13" conf="compile, runtime" rev="0.9.0" rev-constraint-default="0.9.0" rev-constraint-dynamic="0.9.0" callerrev="2.6.4"/>
+				<artifacts>
+					<artifact name="scala-java8-compat_2.13" type="jar" ext="jar" status="no" details="" size="640411" time="0" location="/Users/mutebard/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.13/jars/scala-java8-compat_2.13-0.9.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-java8-compat_2.13/0.9.0/scala-java8-compat_2.13-0.9.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe" name="config">
+			<revision name="1.4.0" status="release" pubdate="20191012032341" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/lightbend/config" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="22">
+				<license name="Apache-2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3138" time="0" location="/Users/mutebard/.ivy2/cache/com.typesafe/config/ivy-1.4.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/config/1.4.0/config-1.4.0.pom"/>
+				<caller organisation="com.typesafe" name="ssl-config-core_2.13" conf="compile, runtime" rev="1.4.0" rev-constraint-default="1.4.0" rev-constraint-dynamic="1.4.0" callerrev="0.4.1"/>
+				<caller organisation="com.typesafe.akka" name="akka-actor_2.13" conf="compile, runtime" rev="1.4.0" rev-constraint-default="1.4.0" rev-constraint-dynamic="1.4.0" callerrev="2.6.4"/>
+				<artifacts>
+					<artifact name="config" type="bundle" ext="jar" status="no" details="" size="294174" time="0" location="/Users/mutebard/.ivy2/cache/com.typesafe/config/bundles/config-1.4.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/config/1.4.0/config-1.4.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.github.ghostdogpr" name="caliban_2.13">
+			<revision name="0.7.5" status="release" pubdate="20200415073018" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/ghostdogpr/caliban" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="8">
+				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3887" time="0" location="/Users/mutebard/.ivy2/cache/com.github.ghostdogpr/caliban_2.13/ivy-0.7.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/github/ghostdogpr/caliban_2.13/0.7.5/caliban_2.13-0.7.5.pom"/>
+				<caller organisation="com.github.ghostdogpr" name="caliban-akka-http_2.13" conf="default, compile, runtime, master" rev="0.7.5" rev-constraint-default="0.7.5" rev-constraint-dynamic="0.7.5" callerrev="0.7.5"/>
+				<caller organisation="udemy-akka-http" name="udemy-akka-http_2.13" conf="compile, runtime" rev="0.7.5" rev-constraint-default="0.7.5" rev-constraint-dynamic="0.7.5" callerrev="0.1"/>
+				<artifacts>
+					<artifact name="caliban_2.13" type="jar" ext="jar" status="no" details="" size="1517920" time="0" location="/Users/mutebard/.ivy2/cache/com.github.ghostdogpr/caliban_2.13/jars/caliban_2.13-0.7.5.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/github/ghostdogpr/caliban_2.13/0.7.5/caliban_2.13-0.7.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.circe" name="circe-core_2.13">
+			<revision name="0.13.0" status="release" pubdate="20200207191538" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/circe/circe" extra-info.apiURL="https://circe.github.io/circe/api/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="30">
+				<license name="Apache 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3082" time="0" location="/Users/mutebard/.ivy2/cache/io.circe/circe-core_2.13/ivy-0.13.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/circe/circe-core_2.13/0.13.0/circe-core_2.13-0.13.0.pom"/>
+				<caller organisation="io.circe" name="circe-parser_2.13" conf="compile, runtime" rev="0.13.0" rev-constraint-default="0.13.0" rev-constraint-dynamic="0.13.0" callerrev="0.13.0"/>
+				<caller organisation="de.heikoseeberger" name="akka-http-circe_2.13" conf="default, compile, runtime, master" rev="0.13.0" rev-constraint-default="0.13.0" rev-constraint-dynamic="0.13.0" callerrev="1.31.0"/>
+				<caller organisation="io.circe" name="circe-jawn_2.13" conf="compile, runtime" rev="0.13.0" rev-constraint-default="0.13.0" rev-constraint-dynamic="0.13.0" callerrev="0.13.0"/>
+				<artifacts>
+					<artifact name="circe-core_2.13" type="jar" ext="jar" status="no" details="" size="1111196" time="0" location="/Users/mutebard/.ivy2/cache/io.circe/circe-core_2.13/jars/circe-core_2.13-0.13.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/circe/circe-core_2.13/0.13.0/circe-core_2.13-0.13.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.typelevel" name="cats-core_2.13">
+			<revision name="2.1.0" status="release" pubdate="20191218133311" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typelevel/cats" extra-info.apiURL="http://typelevel.org/cats/api/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="32">
+				<license name="MIT" url="http://opensource.org/licenses/MIT"/>
+				<metadata-artifact status="no" details="" size="3344" time="0" location="/Users/mutebard/.ivy2/cache/org.typelevel/cats-core_2.13/ivy-2.1.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/typelevel/cats-core_2.13/2.1.0/cats-core_2.13-2.1.0.pom"/>
+				<caller organisation="io.circe" name="circe-core_2.13" conf="compile, runtime" rev="2.1.0" rev-constraint-default="2.1.0" rev-constraint-dynamic="2.1.0" callerrev="0.13.0"/>
+				<artifacts>
+					<artifact name="cats-core_2.13" type="jar" ext="jar" status="no" details="" size="4927638" time="0" location="/Users/mutebard/.ivy2/cache/org.typelevel/cats-core_2.13/jars/cats-core_2.13-2.1.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/typelevel/cats-core_2.13/2.1.0/cats-core_2.13-2.1.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.typelevel" name="cats-kernel_2.13">
+			<revision name="2.1.0" status="release" pubdate="20191218133140" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typelevel/cats" extra-info.apiURL="http://typelevel.org/cats/api/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="34">
+				<license name="MIT" url="http://opensource.org/licenses/MIT"/>
+				<metadata-artifact status="no" details="" size="2903" time="0" location="/Users/mutebard/.ivy2/cache/org.typelevel/cats-kernel_2.13/ivy-2.1.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/typelevel/cats-kernel_2.13/2.1.0/cats-kernel_2.13-2.1.0.pom"/>
+				<caller organisation="org.typelevel" name="cats-core_2.13" conf="compile, runtime" rev="2.1.0" rev-constraint-default="2.1.0" rev-constraint-dynamic="2.1.0" callerrev="2.1.0"/>
+				<artifacts>
+					<artifact name="cats-kernel_2.13" type="jar" ext="jar" status="no" details="" size="3470664" time="0" location="/Users/mutebard/.ivy2/cache/org.typelevel/cats-kernel_2.13/jars/cats-kernel_2.13-2.1.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/typelevel/cats-kernel_2.13/2.1.0/cats-kernel_2.13-2.1.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.typelevel" name="cats-macros_2.13">
+			<revision name="2.1.0" status="release" pubdate="20191218133115" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typelevel/cats" extra-info.apiURL="http://typelevel.org/cats/api/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="33">
+				<license name="MIT" url="http://opensource.org/licenses/MIT"/>
+				<metadata-artifact status="no" details="" size="2928" time="0" location="/Users/mutebard/.ivy2/cache/org.typelevel/cats-macros_2.13/ivy-2.1.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/typelevel/cats-macros_2.13/2.1.0/cats-macros_2.13-2.1.0.pom"/>
+				<caller organisation="org.typelevel" name="cats-core_2.13" conf="compile, runtime" rev="2.1.0" rev-constraint-default="2.1.0" rev-constraint-dynamic="2.1.0" callerrev="2.1.0"/>
+				<artifacts>
+					<artifact name="cats-macros_2.13" type="jar" ext="jar" status="no" details="" size="305" time="0" location="/Users/mutebard/.ivy2/cache/org.typelevel/cats-macros_2.13/jars/cats-macros_2.13-2.1.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/typelevel/cats-macros_2.13/2.1.0/cats-macros_2.13-2.1.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.circe" name="circe-numbers_2.13">
+			<revision name="0.13.0" status="release" pubdate="20200207191714" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/circe/circe" extra-info.apiURL="https://circe.github.io/circe/api/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="31">
+				<license name="Apache 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2799" time="0" location="/Users/mutebard/.ivy2/cache/io.circe/circe-numbers_2.13/ivy-0.13.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/circe/circe-numbers_2.13/0.13.0/circe-numbers_2.13-0.13.0.pom"/>
+				<caller organisation="io.circe" name="circe-core_2.13" conf="compile, runtime" rev="0.13.0" rev-constraint-default="0.13.0" rev-constraint-dynamic="0.13.0" callerrev="0.13.0"/>
+				<artifacts>
+					<artifact name="circe-numbers_2.13" type="jar" ext="jar" status="no" details="" size="13043" time="0" location="/Users/mutebard/.ivy2/cache/io.circe/circe-numbers_2.13/jars/circe-numbers_2.13-0.13.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/circe/circe-numbers_2.13/0.13.0/circe-numbers_2.13-0.13.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="dev.zio" name="zio-streams_2.13">
+			<revision name="1.0.0-RC18-2" status="release" pubdate="20200311203637" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://zio.dev" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="18">
+				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3186" time="0" location="/Users/mutebard/.ivy2/cache/dev.zio/zio-streams_2.13/ivy-1.0.0-RC18-2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/dev/zio/zio-streams_2.13/1.0.0-RC18-2/zio-streams_2.13-1.0.0-RC18-2.pom"/>
+				<caller organisation="com.github.ghostdogpr" name="caliban_2.13" conf="default, compile, runtime, master" rev="1.0.0-RC18-2" rev-constraint-default="1.0.0-RC18-2" rev-constraint-dynamic="1.0.0-RC18-2" callerrev="0.7.5"/>
+				<artifacts>
+					<artifact name="zio-streams_2.13" type="jar" ext="jar" status="no" details="" size="1123921" time="0" location="/Users/mutebard/.ivy2/cache/dev.zio/zio-streams_2.13/jars/zio-streams_2.13-1.0.0-RC18-2.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/dev/zio/zio-streams_2.13/1.0.0-RC18-2/zio-streams_2.13-1.0.0-RC18-2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.propensive" name="magnolia_2.13">
+			<revision name="0.12.7" status="release" pubdate="20200225023418" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://propensive.com/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="12">
+				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3090" time="0" location="/Users/mutebard/.ivy2/cache/com.propensive/magnolia_2.13/ivy-0.12.7.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/magnolia_2.13/0.12.7/magnolia_2.13-0.12.7.pom"/>
+				<caller organisation="com.github.ghostdogpr" name="caliban_2.13" conf="default, compile, runtime, master" rev="0.12.7" rev-constraint-default="0.12.7" rev-constraint-dynamic="0.12.7" callerrev="0.7.5"/>
+				<artifacts>
+					<artifact name="magnolia_2.13" type="jar" ext="jar" status="no" details="" size="119123" time="0" location="/Users/mutebard/.ivy2/cache/com.propensive/magnolia_2.13/jars/magnolia_2.13-0.12.7.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/magnolia_2.13/0.12.7/magnolia_2.13-0.12.7.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.propensive" name="mercator_2.13">
+			<revision name="0.2.1" status="release" pubdate="20190704094959" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://propensive.com/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="13">
+				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2935" time="0" location="/Users/mutebard/.ivy2/cache/com.propensive/mercator_2.13/ivy-0.2.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/mercator_2.13/0.2.1/mercator_2.13-0.2.1.pom"/>
+				<caller organisation="com.github.ghostdogpr" name="caliban_2.13" conf="default, compile, runtime, master" rev="0.2.1" rev-constraint-default="0.2.1" rev-constraint-dynamic="0.2.1" callerrev="0.7.5"/>
+				<caller organisation="com.propensive" name="magnolia_2.13" conf="compile, runtime" rev="0.2.1" rev-constraint-default="0.2.1" rev-constraint-dynamic="0.2.1" callerrev="0.12.7"/>
+				<artifacts>
+					<artifact name="mercator_2.13" type="jar" ext="jar" status="no" details="" size="24030" time="0" location="/Users/mutebard/.ivy2/cache/com.propensive/mercator_2.13/jars/mercator_2.13-0.2.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/mercator_2.13/0.2.1/mercator_2.13-0.2.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.lihaoyi" name="fastparse_2.13">
+			<revision name="2.2.4" status="release" pubdate="20200206233640" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/lihaoyi/fastparse" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="9">
+				<license name="MIT" url="https://spdx.org/licenses/MIT.html"/>
+				<metadata-artifact status="no" details="" size="2923" time="0" location="/Users/mutebard/.ivy2/cache/com.lihaoyi/fastparse_2.13/ivy-2.2.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/lihaoyi/fastparse_2.13/2.2.4/fastparse_2.13-2.2.4.pom"/>
+				<caller organisation="com.github.ghostdogpr" name="caliban_2.13" conf="default, compile, runtime, master" rev="2.2.4" rev-constraint-default="2.2.4" rev-constraint-dynamic="2.2.4" callerrev="0.7.5"/>
+				<artifacts>
+					<artifact name="fastparse_2.13" type="jar" ext="jar" status="no" details="" size="317478" time="0" location="/Users/mutebard/.ivy2/cache/com.lihaoyi/fastparse_2.13/jars/fastparse_2.13-2.2.4.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/lihaoyi/fastparse_2.13/2.2.4/fastparse_2.13-2.2.4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.lihaoyi" name="geny_2.13">
+			<revision name="0.5.1" status="release" pubdate="20200206141243" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/lihaoyi/geny" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="11">
+				<license name="MIT" url="https://spdx.org/licenses/MIT.html"/>
+				<metadata-artifact status="no" details="" size="2435" time="0" location="/Users/mutebard/.ivy2/cache/com.lihaoyi/geny_2.13/ivy-0.5.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/lihaoyi/geny_2.13/0.5.1/geny_2.13-0.5.1.pom"/>
+				<caller organisation="com.lihaoyi" name="fastparse_2.13" conf="compile, runtime" rev="0.5.1" rev-constraint-default="0.5.1" rev-constraint-dynamic="0.5.1" callerrev="2.2.4"/>
+				<artifacts>
+					<artifact name="geny_2.13" type="jar" ext="jar" status="no" details="" size="77424" time="0" location="/Users/mutebard/.ivy2/cache/com.lihaoyi/geny_2.13/jars/geny_2.13-0.5.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/lihaoyi/geny_2.13/0.5.1/geny_2.13-0.5.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.lihaoyi" name="sourcecode_2.13">
+			<revision name="0.2.1" status="release" pubdate="20200206140452" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/lihaoyi/sourcecode" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="10">
+				<license name="MIT" url="https://spdx.org/licenses/MIT.html"/>
+				<metadata-artifact status="no" details="" size="2795" time="0" location="/Users/mutebard/.ivy2/cache/com.lihaoyi/sourcecode_2.13/ivy-0.2.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/lihaoyi/sourcecode_2.13/0.2.1/sourcecode_2.13-0.2.1.pom"/>
+				<caller organisation="com.lihaoyi" name="fastparse_2.13" conf="compile, runtime" rev="0.2.1" rev-constraint-default="0.2.1" rev-constraint-dynamic="0.2.1" callerrev="2.2.4"/>
+				<artifacts>
+					<artifact name="sourcecode_2.13" type="jar" ext="jar" status="no" details="" size="120127" time="0" location="/Users/mutebard/.ivy2/cache/com.lihaoyi/sourcecode_2.13/jars/sourcecode_2.13-0.2.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/lihaoyi/sourcecode_2.13/0.2.1/sourcecode_2.13-0.2.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-compiler">
+			<revision name="2.13.1" status="release" pubdate="20190918051737" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="14">
+				<license name="Apache-2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3100" time="0" location="/Users/mutebard/.ivy2/cache/org.scala-lang/scala-compiler/ivy-2.13.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.1/scala-compiler-2.13.1.pom"/>
+				<caller organisation="com.propensive" name="mercator_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="0.2.1"/>
+				<artifacts>
+					<artifact name="scala-compiler" type="jar" ext="jar" status="no" details="" size="10654794" time="0" location="/Users/mutebard/.ivy2/cache/org.scala-lang/scala-compiler/jars/scala-compiler-2.13.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.1/scala-compiler-2.13.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.fusesource.jansi" name="jansi">
+			<revision name="1.12" status="release" pubdate="20160427124111" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="17">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="4005" time="0" location="/Users/mutebard/.ivy2/cache/org.fusesource.jansi/jansi/ivy-1.12.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.12/jansi-1.12.pom"/>
+				<caller organisation="org.scala-lang" name="scala-compiler" conf="compile, runtime" rev="1.12" rev-constraint-default="1.12" rev-constraint-dynamic="1.12" callerrev="2.13.1"/>
+				<artifacts>
+					<artifact name="jansi" type="jar" ext="jar" status="no" details="" size="151757" time="0" location="/Users/mutebard/.ivy2/cache/org.fusesource.jansi/jansi/jars/jansi-1.12.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.12/jansi-1.12.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="jline" name="jline">
+			<revision name="2.14.6" status="release" pubdate="20191014103415" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="16">
+				<license name="The BSD License" url="http://www.opensource.org/licenses/bsd-license.php"/>
+				<metadata-artifact status="no" details="" size="5033" time="0" location="/Users/mutebard/.ivy2/cache/jline/jline/ivy-2.14.6.xml" searched="false" origin-is-local="false" origin-location="file:////Users/mutebard/.sbt/preloaded/jline/jline/2.14.6/jline-2.14.6.pom"/>
+				<caller organisation="org.scala-lang" name="scala-compiler" conf="compile, runtime" rev="2.14.6" rev-constraint-default="2.14.6" rev-constraint-dynamic="2.14.6" callerrev="2.13.1"/>
+				<artifacts>
+					<artifact name="jline" type="jar" ext="jar" status="no" details="" size="268780" time="0" location="/Users/mutebard/.ivy2/cache/jline/jline/jars/jline-2.14.6.jar">
+						<origin-location is-local="false" location="file:////Users/mutebard/.sbt/preloaded/jline/jline/2.14.6/jline-2.14.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="dev.zio" name="zio_2.13">
+			<revision name="1.0.0-RC18-2" status="release" pubdate="20200311203651" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://zio.dev" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="4">
+				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3322" time="0" location="/Users/mutebard/.ivy2/cache/dev.zio/zio_2.13/ivy-1.0.0-RC18-2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/dev/zio/zio_2.13/1.0.0-RC18-2/zio_2.13-1.0.0-RC18-2.pom"/>
+				<caller organisation="com.github.ghostdogpr" name="caliban_2.13" conf="default, compile, runtime, master" rev="1.0.0-RC18-2" rev-constraint-default="1.0.0-RC18-2" rev-constraint-dynamic="1.0.0-RC18-2" callerrev="0.7.5"/>
+				<caller organisation="dev.zio" name="zio-streams_2.13" conf="compile, runtime" rev="1.0.0-RC18-2" rev-constraint-default="1.0.0-RC18-2" rev-constraint-dynamic="1.0.0-RC18-2" callerrev="1.0.0-RC18-2"/>
+				<caller organisation="udemy-akka-http" name="udemy-akka-http_2.13" conf="compile, runtime" rev="1.0.0-RC18-2" rev-constraint-default="1.0.0-RC18-2" rev-constraint-dynamic="1.0.0-RC18-2" callerrev="0.1"/>
+				<artifacts>
+					<artifact name="zio_2.13" type="jar" ext="jar" status="no" details="" size="3500610" time="0" location="/Users/mutebard/.ivy2/cache/dev.zio/zio_2.13/jars/zio_2.13-1.0.0-RC18-2.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/dev/zio/zio_2.13/1.0.0-RC18-2/zio_2.13-1.0.0-RC18-2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="dev.zio" name="izumi-reflect_2.13">
+			<revision name="0.12.0-M0" status="release" pubdate="20200309064743" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://zio.dev" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="6">
+				<license name="BSD-style" url="http://www.opensource.org/licenses/bsd-license.php"/>
+				<metadata-artifact status="no" details="" size="3258" time="0" location="/Users/mutebard/.ivy2/cache/dev.zio/izumi-reflect_2.13/ivy-0.12.0-M0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/dev/zio/izumi-reflect_2.13/0.12.0-M0/izumi-reflect_2.13-0.12.0-M0.pom"/>
+				<caller organisation="dev.zio" name="zio_2.13" conf="default, compile, runtime, master" rev="0.12.0-M0" rev-constraint-default="0.12.0-M0" rev-constraint-dynamic="0.12.0-M0" callerrev="1.0.0-RC18-2"/>
+				<artifacts>
+					<artifact name="izumi-reflect_2.13" type="jar" ext="jar" status="no" details="" size="831554" time="0" location="/Users/mutebard/.ivy2/cache/dev.zio/izumi-reflect_2.13/jars/izumi-reflect_2.13-0.12.0-M0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/dev/zio/izumi-reflect_2.13/0.12.0-M0/izumi-reflect_2.13-0.12.0-M0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="dev.zio" name="izumi-reflect-thirdparty-boopickle-shaded_2.13">
+			<revision name="0.12.0-M0" status="release" pubdate="20200309064741" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://zio.dev" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="7">
+				<license name="BSD-style" url="http://www.opensource.org/licenses/bsd-license.php"/>
+				<metadata-artifact status="no" details="" size="3166" time="0" location="/Users/mutebard/.ivy2/cache/dev.zio/izumi-reflect-thirdparty-boopickle-shaded_2.13/ivy-0.12.0-M0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/dev/zio/izumi-reflect-thirdparty-boopickle-shaded_2.13/0.12.0-M0/izumi-reflect-thirdparty-boopickle-shaded_2.13-0.12.0-M0.pom"/>
+				<caller organisation="dev.zio" name="izumi-reflect_2.13" conf="compile, runtime" rev="0.12.0-M0" rev-constraint-default="0.12.0-M0" rev-constraint-dynamic="0.12.0-M0" callerrev="0.12.0-M0"/>
+				<artifacts>
+					<artifact name="izumi-reflect-thirdparty-boopickle-shaded_2.13" type="jar" ext="jar" status="no" details="" size="266875" time="0" location="/Users/mutebard/.ivy2/cache/dev.zio/izumi-reflect-thirdparty-boopickle-shaded_2.13/jars/izumi-reflect-thirdparty-boopickle-shaded_2.13-0.12.0-M0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/dev/zio/izumi-reflect-thirdparty-boopickle-shaded_2.13/0.12.0-M0/izumi-reflect-thirdparty-boopickle-shaded_2.13-0.12.0-M0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="dev.zio" name="zio-stacktracer_2.13">
+			<revision name="1.0.0-RC18-2" status="release" pubdate="20200311203640" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://zio.dev" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="5">
+				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3057" time="0" location="/Users/mutebard/.ivy2/cache/dev.zio/zio-stacktracer_2.13/ivy-1.0.0-RC18-2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/dev/zio/zio-stacktracer_2.13/1.0.0-RC18-2/zio-stacktracer_2.13-1.0.0-RC18-2.pom"/>
+				<caller organisation="dev.zio" name="zio_2.13" conf="default, compile, runtime, master" rev="1.0.0-RC18-2" rev-constraint-default="1.0.0-RC18-2" rev-constraint-dynamic="1.0.0-RC18-2" callerrev="1.0.0-RC18-2"/>
+				<artifacts>
+					<artifact name="zio-stacktracer_2.13" type="jar" ext="jar" status="no" details="" size="70778" time="0" location="/Users/mutebard/.ivy2/cache/dev.zio/zio-stacktracer_2.13/jars/zio-stacktracer_2.13-1.0.0-RC18-2.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/dev/zio/zio-stacktracer_2.13/1.0.0-RC18-2/zio-stacktracer_2.13-1.0.0-RC18-2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-http_2.13">
+			<revision name="10.1.11" status="release" pubdate="20191202042347" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://akka.io" extra-info.apiURL="https://doc.akka.io/api/akka-http/10.1.11/" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="1">
+				<license name="Apache-2.0" url="https://opensource.org/licenses/Apache-2.0"/>
+				<metadata-artifact status="no" details="" size="3181" time="0" location="/Users/mutebard/.ivy2/cache/com.typesafe.akka/akka-http_2.13/ivy-10.1.11.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-http_2.13/10.1.11/akka-http_2.13-10.1.11.pom"/>
+				<caller organisation="com.github.ghostdogpr" name="caliban-akka-http_2.13" conf="default, compile, runtime, master" rev="10.1.11" rev-constraint-default="10.1.11" rev-constraint-dynamic="10.1.11" callerrev="0.7.5"/>
+				<caller organisation="de.heikoseeberger" name="akka-http-circe_2.13" conf="default, compile, runtime, master" rev="10.1.11" rev-constraint-default="10.1.11" rev-constraint-dynamic="10.1.11" callerrev="1.31.0"/>
+				<caller organisation="udemy-akka-http" name="udemy-akka-http_2.13" conf="compile, runtime" rev="10.1.11" rev-constraint-default="10.1.11" rev-constraint-dynamic="10.1.11" callerrev="0.1"/>
+				<artifacts>
+					<artifact name="akka-http_2.13" type="jar" ext="jar" status="no" details="" size="1769358" time="0" location="/Users/mutebard/.ivy2/cache/com.typesafe.akka/akka-http_2.13/jars/akka-http_2.13-10.1.11.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-http_2.13/10.1.11/akka-http_2.13-10.1.11.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-http-core_2.13">
+			<revision name="10.1.11" status="release" pubdate="20191202042402" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://akka.io" extra-info.apiURL="https://doc.akka.io/api/akka-http/10.1.11/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="2">
+				<license name="Apache-2.0" url="https://opensource.org/licenses/Apache-2.0"/>
+				<metadata-artifact status="no" details="" size="3800" time="0" location="/Users/mutebard/.ivy2/cache/com.typesafe.akka/akka-http-core_2.13/ivy-10.1.11.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-http-core_2.13/10.1.11/akka-http-core_2.13-10.1.11.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-http_2.13" conf="default, compile, runtime, master" rev="10.1.11" rev-constraint-default="10.1.11" rev-constraint-dynamic="10.1.11" callerrev="10.1.11"/>
+				<artifacts>
+					<artifact name="akka-http-core_2.13" type="jar" ext="jar" status="no" details="" size="3635066" time="0" location="/Users/mutebard/.ivy2/cache/com.typesafe.akka/akka-http-core_2.13/jars/akka-http-core_2.13-10.1.11.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-http-core_2.13/10.1.11/akka-http-core_2.13-10.1.11.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-parsing_2.13">
+			<revision name="10.1.11" status="release" pubdate="20191202042407" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://akka.io" extra-info.apiURL="https://doc.akka.io/api/akka-http/10.1.11/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="3">
+				<license name="Apache-2.0" url="https://opensource.org/licenses/Apache-2.0"/>
+				<metadata-artifact status="no" details="" size="3180" time="0" location="/Users/mutebard/.ivy2/cache/com.typesafe.akka/akka-parsing_2.13/ivy-10.1.11.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-parsing_2.13/10.1.11/akka-parsing_2.13-10.1.11.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-http-core_2.13" conf="compile, runtime" rev="10.1.11" rev-constraint-default="10.1.11" rev-constraint-dynamic="10.1.11" callerrev="10.1.11"/>
+				<artifacts>
+					<artifact name="akka-parsing_2.13" type="jar" ext="jar" status="no" details="" size="984652" time="0" location="/Users/mutebard/.ivy2/cache/com.typesafe.akka/akka-parsing_2.13/jars/akka-parsing_2.13-10.1.11.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-parsing_2.13/10.1.11/akka-parsing_2.13-10.1.11.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-reflect">
+			<revision name="2.13.1" status="release" pubdate="20190918045106" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://www.scala-lang.org/" extra-info.apiURL="https://www.scala-lang.org/api/2.13.1/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="15">
+				<license name="Apache-2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2831" time="0" location="/Users/mutebard/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.13.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.1/scala-reflect-2.13.1.pom"/>
+				<caller organisation="org.scala-lang" name="scala-compiler" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="2.13.1"/>
+				<caller organisation="com.propensive" name="mercator_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="0.2.1"/>
+				<artifacts>
+					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="3607717" time="0" location="/Users/mutebard/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.13.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.1/scala-reflect-2.13.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="2.13.1" status="release" pubdate="20190918045936" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://www.scala-lang.org/" extra-info.apiURL="https://www.scala-lang.org/api/2.13.1/" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="0">
+				<license name="Apache-2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2659" time="0" location="/Users/mutebard/.ivy2/cache/org.scala-lang/scala-library/ivy-2.13.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.pom"/>
+				<caller organisation="com.github.ghostdogpr" name="caliban-akka-http_2.13" conf="default, compile, runtime, master" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="0.7.5"/>
+				<caller organisation="com.github.ghostdogpr" name="caliban_2.13" conf="default, compile, runtime, master" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="0.7.5"/>
+				<caller organisation="org.scala-lang.modules" name="scala-java8-compat_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="0.9.0"/>
+				<caller organisation="io.circe" name="circe-parser_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="0.13.0"/>
+				<caller organisation="dev.zio" name="zio-stacktracer_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="1.0.0-RC18-2"/>
+				<caller organisation="dev.zio" name="zio-streams_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="1.0.0-RC18-2"/>
+				<caller organisation="io.circe" name="circe-jawn_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="0.13.0"/>
+				<caller organisation="com.propensive" name="magnolia_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="0.12.7"/>
+				<caller organisation="org.scala-lang.modules" name="scala-parser-combinators_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="1.1.2"/>
+				<caller organisation="com.typesafe.akka" name="akka-parsing_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="10.1.11"/>
+				<caller organisation="dev.zio" name="zio_2.13" conf="default, compile, runtime, master" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="1.0.0-RC18-2"/>
+				<caller organisation="com.typesafe.akka" name="akka-http_2.13" conf="default, compile, runtime, master" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="10.1.11"/>
+				<caller organisation="org.scala-lang" name="scala-reflect" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="2.13.1"/>
+				<caller organisation="io.circe" name="circe-core_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="0.13.0"/>
+				<caller organisation="org.typelevel" name="jawn-parser_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="1.0.0"/>
+				<caller organisation="org.scala-lang" name="scala-compiler" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="2.13.1"/>
+				<caller organisation="com.propensive" name="mercator_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="0.2.1"/>
+				<caller organisation="org.typelevel" name="cats-core_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="2.1.0"/>
+				<caller organisation="org.typelevel" name="cats-kernel_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="2.1.0"/>
+				<caller organisation="com.typesafe.akka" name="akka-http-core_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="10.1.11"/>
+				<caller organisation="dev.zio" name="izumi-reflect_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="0.12.0-M0"/>
+				<caller organisation="org.typelevel" name="cats-macros_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="2.1.0"/>
+				<caller organisation="dev.zio" name="izumi-reflect-thirdparty-boopickle-shaded_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="0.12.0-M0"/>
+				<caller organisation="io.circe" name="circe-numbers_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="0.13.0"/>
+				<caller organisation="com.typesafe" name="ssl-config-core_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="0.4.1"/>
+				<caller organisation="com.typesafe.akka" name="akka-actor_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="2.6.4"/>
+				<caller organisation="de.heikoseeberger" name="akka-http-circe_2.13" conf="default, compile, runtime, master" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="1.31.0"/>
+				<caller organisation="com.typesafe.akka" name="akka-stream_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="2.6.4"/>
+				<caller organisation="udemy-akka-http" name="udemy-akka-http_2.13" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="0.1"/>
+				<artifacts>
+					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="5721063" time="0" location="/Users/mutebard/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.13.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

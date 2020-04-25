@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: de.heikoseeberger:akka-http-circe_2.13:1.31.0:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/de.heikoseeberger/akka-http-circe_2.13/jars/akka-http-circe_2.13-1.31.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/de.heikoseeberger/akka-http-circe_2.13/srcs/akka-http-circe_2.13-1.31.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
