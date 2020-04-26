@@ -43,7 +43,7 @@ class UserActor extends Actor with ActorLogging{
 				sender() ! userSeq.head
 			} else {
 				log.info(s"[Read_One_User] USER $username does not exist")
-				sender() ! null
+				sender() ! User()
 			}
 
 

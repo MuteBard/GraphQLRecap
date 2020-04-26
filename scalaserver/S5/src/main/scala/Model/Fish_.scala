@@ -4,8 +4,8 @@ object Fish_ {
 
 	//Model
 	case class Fish(
-		_id : Int,
-		fishId : String,
+		_id : Int = -1,
+		fishId : String ,
 		name : String,
 		bells : Int,
 		availability : List[String],

@@ -2,33 +2,47 @@ package GraphQL
 //import Model.User_._
 import Model.Bug_._
 import Model.Fish_._
+import Model.MovementRecord_.MovementRecord
+import Model.User_._
 import Service._
-import zio.UIO
+import zio.{IO, UIO}
 
 object Queries {
 
+	//Type Definitions
+	//Errors
 	case class Queries(
-          //User
-          //		getUser : UIO[User],
+		//User
+		getUser:usernameArgs =>                   IO[NotFound, User],
 
-          //Bug
-          getAllBugs :                                UIO[List[Bug]],
-          getAllBugsByMonth: bugMonthsArgs =>         UIO[List[Bug]],
-          getAllRareBugsByMonth: bugMonthsArgs =>     UIO[List[Bug]],
-          getBugById: bugIdArgs =>                    UIO[Bug],
-          getBugByName: bugNameArgs =>                UIO[Bug],
-          getBugByRandom : bugMonthsArgs =>           UIO[Bug],
-	      //Fish
-          getAllFishes :                              UIO[List[Fish]],
-          getAllFishesByMonth: fishMonthsArgs =>       UIO[List[Fish]],
-          getAllRareFishesByMonth: fishMonthsArgs =>   UIO[List[Fish]],
-          getFishById: fishIdArgs =>                   UIO[Fish],
-          getFishByName: fishNameArgs =>               UIO[Fish],
-          getFishByRandom : fishMonthsArgs =>          UIO[Fish],
+	    //MovementRecord
+		getDayRecords:                            UIO[MovementRecord],
+		getMonthRecords:                          UIO[List[MovementRecord]],
+		getTurnipPrices:                          UIO[Int],
+
+		//Bug
+		getAllBugs:                               UIO[List[Bug]],
+		getAllBugsByMonth: bugMonthsArgs =>       IO[NotFound, List[Bug]],
+		getAllRareBugsByMonth: bugMonthsArgs =>   IO[NotFound, List[Bug]],
+		getBugById: bugIdArgs =>                  IO[NotFound, Bug],
+		getBugByName: bugNameArgs =>              IO[NotFound, Bug],
+		getBugByRandom: bugMonthsArgs =>          IO[NotFound, Bug],
+		//Fish
+		getAllFishes:                             UIO[List[Fish]],
+		getAllFishesByMonth: fishMonthsArgs =>     IO[NotFound, List[Fish]],
+		getAllRareFishesByMonth: fishMonthsArgs => IO[NotFound, List[Fish]],
+		getFishById: fishIdArgs =>                 IO[NotFound, Fish],
+		getFishByName: fishNameArgs =>             IO[NotFound, Fish],
+		getFishByRandom: fishMonthsArgs =>         IO[NotFound, Fish],
 	)
 	val cbs : CrossingBotService = new CBS()
 
+	//Resolvers
 	val allQueries = Queries(
+		args => cbs.getUser(args.username),
+		cbs.getDayRecords,
+		cbs.getMonthRecords,
+		cbs.getTurnipPrices,
 		cbs.getAllBugs,
 		args => cbs.getAllBugsByMonth(args.months),
 		args => cbs.getAllRareBugsByMonth(args.months),

@@ -5,7 +5,7 @@ import Fish_.Fish
 
 object Pocket_ {
 	case class Pocket(
-		 bug : List[Bug],
-		 fish : List[Fish],
+		 bug : List[Bug] = List(),
+		 fish : List[Fish] = List(),
 	)
 }

@@ -4,13 +4,13 @@ object Bug_ {
 
 	//Model
 	case class Bug(
-		_id : Int,
-		bugId : String,
-		name : String,
-		bells : Int,
-		availability : List[String],
-		rarity : Int,
-		img : String
+		_id : Int = -1,
+		bugId : String = "B-1",
+		name : String = "",
+		bells : Int = -1,
+		availability : List[String] = List(),
+		rarity : Int = -1,
+		img : String = ""
 	)
 	//Arguments
 	case class bugMonthsArgs(months : List[String])

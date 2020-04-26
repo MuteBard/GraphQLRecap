@@ -40,7 +40,7 @@ object UserOperations extends MongoDBOperations {
 	def readOneUser(username : String): Seq[User] = {
 		val source = MongoSource(allUsers.find(classOf[User])).filter(users => users.username == username)
 		val userSeqFuture = source.runWith(Sink.seq)
-		val userSeq : Seq[User] = Await.result(userSeqFuture, 1 seconds)
+		val userSeq : Seq[User] = Await.result(userSeqFuture, 2 seconds)
 		userSeq
 	}
 
