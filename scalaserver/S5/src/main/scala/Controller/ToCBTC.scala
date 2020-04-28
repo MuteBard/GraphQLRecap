@@ -12,14 +12,14 @@ import caliban.GraphQL.graphQL
 import caliban.RootResolver
 import App.Main.system
 import GraphQL.Queries.allQueries
-//import GraphQL.Mutations.allMutations
+import GraphQL.Mutations.allMutations
 
 object ToCBTC extends App with AkkaHttpCirceAdapter{
 
 
 	implicit val executionContext: ExecutionContextExecutor = system.dispatcher
 	implicit val runtime: Runtime[ZEnv] = Runtime.default
-	val api = graphQL(RootResolver(allQueries/*, allMutations*/))
+	val api = graphQL(RootResolver(allQueries, allMutations))
 
 	val interpreter = runtime.unsafeRun(api.interpreter)
 
@@ -30,8 +30,8 @@ object ToCBTC extends App with AkkaHttpCirceAdapter{
 			getFromResource("graphiql.html")
 		}
 
-	val bindingFuture = Http().bindAndHandle(route, "localhost", 7000)
-	println(s"Server online at http://localhost:7000/\nPress RETURN to stop...")
+	val bindingFuture = Http().bindAndHandle(route, "localhost", 7002)
+	println(s"Server online at http://localhost:7002/graphiql\nPress RETURN to stop...")
 	StdIn.readLine()
 	bindingFuture
 		.flatMap(_.unbind())

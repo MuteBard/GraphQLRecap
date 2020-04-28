@@ -4,7 +4,7 @@ object Bug_ {
 
 	//Model
 	case class Bug(
-		_id : Int = -1,
+		id : Int = -1,
 		bugId : String = "B-1",
 		name : String = "",
 		bells : Int = -1,

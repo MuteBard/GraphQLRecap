@@ -13,7 +13,7 @@ object MarketActor {
 	case object Read_Latest_Movement_Record_Day
 	case object Read_Latest_Movement_Record_Month
 	case object Request_Turnip_Price
-	case class  Update_Stalks_Purchased(amount : Int, business : String)
+	case class  Update_Stalks_Purchased(quantity : Int, business : String)
 	case object Delete_Earliest_Movement_Records
 	case object Start_Todays_Market
 
@@ -105,13 +105,13 @@ class MarketActor extends Actor with ActorLogging {
 			log.info(s"[Read_Latest_Movement_Record_Day] Getting latest Movement Record")
 			sender() ! MarketOperations.readLatestMovementRecord()
 
-		case Update_Stalks_Purchased(amountBought, business) =>
-			log.info(s"[Read_Latest_Movement_Record] Updating total stalks purchased")
+		case Update_Stalks_Purchased(quantity, business) =>
+			log.info(s"[Read_Latest_Movement_Record] Updating total live stalks")
 			if (business == "sell") {
-				val amountSold = amountBought * -1
-				MarketOperations.updateStalksPurchased(amountSold)
+				val quantitySold = quantity * -1
+				MarketOperations.updateStalksPurchased(quantitySold)
 			} else {
-				MarketOperations.updateStalksPurchased(amountBought)
+				MarketOperations.updateStalksPurchased(quantity)
 			}
 
 		case Request_Turnip_Price =>

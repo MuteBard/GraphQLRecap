@@ -1,6 +1,7 @@
 package Actors
 
 import Dao.BugOperations
+import Model.Bug_.Bug
 import akka.actor.{Actor, ActorLogging}
 
 import scala.util.Random
@@ -38,7 +39,7 @@ class BugActor extends Actor with ActorLogging{
 				sender() ! bugSeq.head
 			}else {
 				log.info(s"[Read_One_User] BUG with id $bId does not exist")
-				sender() ! null
+				sender() ! Bug()
 			}
 
 		case Read_One_Bug_By_Name(name : String) =>
@@ -50,7 +51,7 @@ class BugActor extends Actor with ActorLogging{
 				sender() ! bugSeq.head
 			}else {
 				log.info(s"[Read_One_User] BUG with name $name does not exist")
-				sender() ! null
+				sender() ! Bug()
 			}
 
 
@@ -73,3 +74,4 @@ class BugActor extends Actor with ActorLogging{
 		else 1
 	}
 }
+

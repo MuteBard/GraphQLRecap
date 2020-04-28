@@ -4,13 +4,13 @@ object Fish_ {
 
 	//Model
 	case class Fish(
-		_id : Int = -1,
-		fishId : String ,
-		name : String,
-		bells : Int,
-		availability : List[String],
-		rarity : Int,
-		img : String
+		id : Int = -1,
+		fishId : String = "F-1",
+		name : String = "",
+		bells : Int = -1,
+		availability : List[String] = List(),
+		rarity : Int = -1,
+		img : String = ""
 	)
 	//Arguments
 	case class fishMonthsArgs(months : List[String])

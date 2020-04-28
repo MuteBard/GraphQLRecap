@@ -1,6 +1,7 @@
 package Actors
 
 import Dao.FishOperations
+import Model.Fish_.Fish
 import akka.actor.{Actor, ActorLogging}
 
 import scala.util.Random
@@ -38,7 +39,7 @@ class FishActor extends Actor with ActorLogging{
 				sender() ! fishSeq.head
 			}else {
 				log.info(s"[Read_One_Fish_By_Id] FISH with id $fId does not exist")
-				sender() ! null
+				sender() ! Fish()
 			}
 
 		case Read_One_Fish_By_Name(name : String) =>
@@ -50,7 +51,7 @@ class FishActor extends Actor with ActorLogging{
 				sender() ! fishSeq.head
 			}else {
 				log.info(s"[Read_One_Fish_By_Name] FISH with name $name does not exist")
-				sender() ! null
+				sender() ! Fish()
 			}
 
 		case Read_All_Fish_By_Month(month : List[String]) =>

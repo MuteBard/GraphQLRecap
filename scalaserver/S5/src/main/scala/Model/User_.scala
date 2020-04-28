@@ -4,19 +4,21 @@ import TurnipTransaction_.TurnipTransaction
 
 object User_ {
 	case class User(
-		_id : Int = -1,
+		id : Int = -1,
 		username : String = "NULL/USER",
-		fishingPoleLvl : Int = -1,
-		bugNetLvl : Int = -1,
-		bells : Int = -1,
+		fishingPoleLvl : Int = 1,
+		bugNetLvl : Int = 1,
+		bells : Int = 0,
 		pocket : Pocket = Pocket(),
 		liveTurnips : TurnipTransaction = TurnipTransaction(),
 		turnipTransactionHistory : List[TurnipTransaction] = List(),
-		img : String = "",
+		avatar : String = "",
 	)
 
 	//Arguments
 	case class usernameArgs(username : String)
-	case class sellCreatureArgs(username : String, creaturename : String, species : String)
+	case class catchCreatureArgs(username: String, species: String, months: List[String])
+	case class finalizeUserArgs(username : String, id : Int, avatar : String)
+	case class sellCreatureArgs(username : String, species : String, creaturename : String)
 
 }
