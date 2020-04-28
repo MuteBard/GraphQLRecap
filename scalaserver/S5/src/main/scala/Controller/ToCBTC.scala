@@ -30,8 +30,8 @@ object ToCBTC extends App with AkkaHttpCirceAdapter{
 			getFromResource("graphiql.html")
 		}
 
-	val bindingFuture = Http().bindAndHandle(route, "localhost", 7002)
-	println(s"Server online at http://localhost:7002/graphiql\nPress RETURN to stop...")
+	val bindingFuture = Http().bindAndHandle(route, "localhost", 4774)
+	println(s"Server online at http://localhost:4774/graphiql\nPress RETURN to stop...")
 	StdIn.readLine()
 	bindingFuture
 		.flatMap(_.unbind())

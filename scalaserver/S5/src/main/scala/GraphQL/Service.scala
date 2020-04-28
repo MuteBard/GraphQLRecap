@@ -1,5 +1,5 @@
 package GraphQL
-import Actors.{BugActor, FishActor, MarketActor, UserActor}
+import Actors.{BugActor, FishActor, MarketActor, StartActor, UserActor}
 import Model.User_._
 import Model.Bug_._
 import Model.Fish_._
@@ -18,18 +18,15 @@ object Service {
 	case class NotFound(message: String) extends Throwable
 	case class NotValid(message: String) extends Throwable
 	trait CrossingBotService {
+
 		//--User--
     	//Queries
 		def getUser(username : String):                     IO[NotFound, User]
-
-		//--TurnipTransaction--
-		//Queries
 		def validatePendingTransaction(
 			username : String,
 			business : String,
 			quantity : Int
 		):                                                  UIO[TurnipTransaction]
-
 
 		//--MovementRecord--
 		//Queries
@@ -57,6 +54,11 @@ object Service {
 		def getFishByRandom(months : List[String]):         IO[NotFound, Fish]
 
 		//Mutations
+		//--Start--
+		def populate():                                     UIO[String]
+		def startMarket():                                  UIO[String]
+		def stopMarket():                                   UIO[String]
+
 		def catchCreature(
 			 username: String,
 			 species : String,
@@ -214,6 +216,21 @@ object Service {
 		def sellAllCreatures(username : String): UIO[Int] = {
 			val bells = Await.result((userActor ? UserActor.Delete_All_Creatures_From_Pocket(username)).mapTo[Int], 3 seconds)
 			IO.succeed(bells)
+		}
+
+		def populate() : UIO[String] = {
+			val status = Await.result((startActor ? StartActor.Create_Creatures_All).mapTo[String], 3 seconds)
+			IO.succeed(status)
+		}
+
+		def startMarket() : UIO[String] = {
+			val status = Await.result((startActor ? StartActor.Start_Market_Timers).mapTo[String], 3 seconds)
+			IO.succeed(status)
+		}
+
+		def stopMarket() : UIO[String] = {
+			val status = Await.result((startActor ? StartActor.Stop_Market_Timers).mapTo[String], 3 seconds)
+			IO.succeed(status)
 		}
 
 	}

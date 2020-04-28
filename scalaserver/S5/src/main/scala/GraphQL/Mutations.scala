@@ -13,6 +13,9 @@ object Mutations {
 	    sellOneCreature : sellCreatureArgs =>                               UIO[Int],
 	    sellAllCreatures : usernameArgs =>                                  UIO[Int],
 	    acknowledgeTransaction: authorizedTransactionArgs =>                IO[NotFound, String],
+	    populate:                                                           UIO[String],
+	    startMarket:                                                        UIO[String],
+	    stopMarket:                                                         UIO[String]
 
 	)
 	val cbs : CrossingBotService = new CBS()
@@ -22,6 +25,9 @@ object Mutations {
 		args => cbs.finalizeUserCreation(args.username, args.id, args.avatar),
 		args => cbs.sellOneCreature(args.username, args.species, args.creatureName),
 		args => cbs.sellAllCreatures(args.username),
-		args => cbs.acknowledgeTransaction(args.username, args.business, args.quantity, args.marketPrice, args.totalBells)
+		args => cbs.acknowledgeTransaction(args.username, args.business, args.quantity, args.marketPrice, args.totalBells),
+		cbs.populate(),
+		cbs.startMarket(),
+		cbs.stopMarket()
 	)
 }

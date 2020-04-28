@@ -34,10 +34,6 @@ class UserActor extends Actor with ActorLogging{
 	implicit val timeout = Timeout(5 seconds)
 	override def receive: Receive = {
 
-//		case Create_One_User(user) =>
-//			log.info(s"[Create_One_User] Inserting USER in database with new creature in pocket")
-//			UserOperations.createOneUser(user)
-
 		case Read_One_User(username) =>
 			log.info(s"[Read_One_User] Getting USER with username $username")
 
@@ -55,10 +51,10 @@ class UserActor extends Actor with ActorLogging{
 					val netGainLossAsPercentage = (math rint(netGainLossAsBells.toDouble / marketTurnipPrice.toDouble)).toInt
 					val newLiveTurnip = TurnipTransaction(liveTurnip.business,liveTurnip.quantity,liveTurnip.marketPrice, liveTurnip.totalBells, liveTurnip.status, netGainLossAsBells, netGainLossAsPercentage)
 
-					log.info(s"[Read_One_User] Returning modified USER")
+					log.info(s"[Read_One_User] Returning modified USER $username")
 					sender() !  UserOperations.updateTurnipTransactionStatsUponRetrieval(username, newLiveTurnip)
 				}else{
-					log.info(s"[Read_One_User] $userSeq")
+					log.info(s"[Read_One_User] Returning USER $username")
 					sender() ! userSeq.head
 				}
 			} else {
