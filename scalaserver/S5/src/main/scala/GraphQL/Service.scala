@@ -6,9 +6,10 @@ import Model.Fish_._
 import App.Main._
 import Model.MovementRecord_.MovementRecord
 import Model.TurnipTransaction_.TurnipTransaction
-import zio.{IO, UIO}
+import zio.{IO, Queue, UIO}
 import akka.pattern.ask
 import akka.util.Timeout
+import zio.stream.ZStream
 
 import scala.concurrent.Await
 import scala.concurrent.duration._
@@ -89,6 +90,7 @@ object Service {
 
 	class CBS extends CrossingBotService{
 		implicit val timeout = Timeout(5 seconds)
+		var num = 0
 		//--User--
 		//Queries
 		def getUser(username : String) : IO[NotFound, User] = {
@@ -101,6 +103,7 @@ object Service {
 			IO.succeed(turnipTransaction)
 		}
 		//--MovementRecord--
+
 		def getDayRecords: UIO[MovementRecord] = {
 			val movementRecord = Await.result((marketActor ? MarketActor.Read_Latest_Movement_Record_Day).mapTo[MovementRecord], 2 seconds)
 			IO.succeed(movementRecord)

@@ -2,4 +2,6 @@ package GraphQL
 
 object Subscriptions {
 
+
+
 }

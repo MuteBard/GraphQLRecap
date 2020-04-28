@@ -20,7 +20,6 @@ object ToCBTC extends App with AkkaHttpCirceAdapter{
 	implicit val executionContext: ExecutionContextExecutor = system.dispatcher
 	implicit val runtime: Runtime[ZEnv] = Runtime.default
 	val api = graphQL(RootResolver(allQueries, allMutations))
-
 	val interpreter = runtime.unsafeRun(api.interpreter)
 
 	val route =

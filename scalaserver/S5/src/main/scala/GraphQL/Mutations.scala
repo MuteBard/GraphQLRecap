@@ -8,14 +8,14 @@ object Mutations {
 
 	case class Mutations(
 	    //User
-	    catchCreature : catchCreatureArgs =>                                IO[NotFound, String],
-	    finalizeUserCreation : finalizeUserArgs =>                            IO[NotFound, String],
-	    sellOneCreature : sellCreatureArgs =>                               UIO[Int],
-	    sellAllCreatures : usernameArgs =>                                  UIO[Int],
-	    acknowledgeTransaction: authorizedTransactionArgs =>                IO[NotFound, String],
-	    populate:                                                           UIO[String],
-	    startMarket:                                                        UIO[String],
-	    stopMarket:                                                         UIO[String]
+	    catchCreature :           catchCreatureArgs => IO[NotFound, String],
+	    finalizeUserCreation :     finalizeUserArgs => IO[NotFound, String],
+	    sellOneCreature :         sellCreatureArgs => UIO[Int],
+	    sellAllCreatures :        usernameArgs => UIO[Int],
+	    acknowledgeTransaction:   authorizedTransactionArgs => IO[NotFound, String],
+	    populate:                 UIO[String],
+	    startMarket:              UIO[String],
+	    stopMarket:               UIO[String]
 
 	)
 	val cbs : CrossingBotService = new CBS()
