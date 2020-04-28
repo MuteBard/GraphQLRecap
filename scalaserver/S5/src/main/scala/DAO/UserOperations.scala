@@ -23,6 +23,8 @@ import system.dispatcher
 
 
 object UserOperations extends MongoDBOperations {
+	final val BUG = "bug"
+	final val FISH = "fish"
 	val codecRegistryUser = fromRegistries(fromProviders(classOf[User], classOf[TurnipTransaction],classOf[Pocket], classOf[Bug], classOf[Fish]), DEFAULT_CODEC_REGISTRY)
 	val codecRegistryPocket = fromRegistries(fromProviders(classOf[User],classOf[Pocket], classOf[Bug], classOf[Fish]), DEFAULT_CODEC_REGISTRY)
 
@@ -106,20 +108,21 @@ object UserOperations extends MongoDBOperations {
 		readOneUser(username).head
 	}
 
-	def deleteOneForUser(data : sellCreatureArgs, creatureBells : Int): Unit = {
+	def deleteOneForUser(username :String, creatureName : String, creatureBells: Int): Unit = {
 		if (creatureBells != 0) {
-			val userList: List[User] = readOneUser(data.username).toList
+			val userList: List[User] = readOneUser(username).toList
 			val user: User = userList.head
-			val source = Source(userList).map(_ => Filters.eq("username", data.username))
+			val source = Source(userList).map(_ => Filters.eq("username", username))
 			val taskFuture = source.runWith(MongoSink.deleteOne(allUsers))
 			taskFuture.onComplete {
 				case Success(_) =>
-					val	bug = user.pocket.bug.filter(creature => creature.name != data.creaturename)
-					val	fish = user.pocket.fish.filter(creature => creature.name != data.creaturename)
+					val	bug = user.pocket.bug.filter(creature => creature.name != creatureName)
+					val	fish = user.pocket.fish.filter(creature => creature.name != creatureName)
 					val updatedPocket = Pocket(bug, fish)
 					val updatedBells = user.bells + creatureBells
 					val newUser = User(user.id, user.username, user.fishingPoleLvl, user.bugNetLvl, updatedBells, updatedPocket, user.liveTurnips, user.turnipTransactionHistory, user.avatar)
 					createOneUser(newUser)
+					log.info("UserOperations", "deleteOneForUser", "Success", s"Sold $creatureName for $creatureBells bells")
 				case Failure(ex) =>
 					log.warn("UserOperations", "deleteOneForUser", "Failure", s"Failed to delete one USER: $ex")
 			}
@@ -128,18 +131,18 @@ object UserOperations extends MongoDBOperations {
 		}
 	}
 
-	def deleteAllForUser(data : sellCreatureArgs): Int = {
-		val userList: List[User] = readOneUser(data.username).toList
+	def deleteAllForUser(username : String): Int = {
+		val userList: List[User] = readOneUser(username).toList
 		val user: User = userList.head
 		val bugBells = Await.result(Source(user.pocket.bug).via(Flow[Bug].fold[Int](0)(_ + _.bells)).runWith(Sink.head), 1 second)
 		val fishBells = Await.result(Source(user.pocket.fish).via(Flow[Fish].fold[Int](0)(_ + _.bells)).runWith(Sink.head), 1 second)
 		val creatureBells = bugBells + fishBells
 		if (creatureBells != 0) {
-			val source = Source(userList).map(_ => Filters.eq("username", data.username))
+			val source = Source(userList).map(_ => Filters.eq("username", username))
 			val taskFuture = source.runWith(MongoSink.deleteMany(allUsers))
 			taskFuture.onComplete {
 				case Success(_) =>
-					log.info("UserOperations", "deleteAllForUser", "Success", s"Deleted USER ${data.username}")
+					log.info("UserOperations", "deleteAllForUser", "Success", s"Deleted USER $username")
 					val bug : List[Bug] = List()
 					val fish : List[Fish] = List()
 					val updatedPocket = Pocket(bug, fish)
@@ -147,10 +150,10 @@ object UserOperations extends MongoDBOperations {
 					val newUser = User(user.id, user.username, user.fishingPoleLvl, user.bugNetLvl, updatedBells, updatedPocket, user.liveTurnips , user.turnipTransactionHistory, user.avatar)
 					createOneUser(newUser)
 				case Failure(ex) =>
-					log.warn("UserOperations", "deleteAllForUser", "Failure", s"Failed to delete one USER: $ex")
+					log.warn("UserOperations", "deleteAllForUser", "Failure", s"Failed to delete all creature's in $username's pocket:  $ex")
 			}
 		}else{
-			log.warn("UserOperations", "deleteAllForUser", "Failure", s"Failed to delete one USER: Nothing in pocket")
+			log.warn("UserOperations", "deleteAllForUser", "Failure", s"Failed to delete creature's in $username's pocket : Nothing in pocket")
 
 		}
 		creatureBells

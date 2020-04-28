@@ -21,26 +21,6 @@ object Service {
 		//--User--
     	//Queries
 		def getUser(username : String):                     IO[NotFound, User]
-		//Mutations
-		def catchCreature(
-			username: String,
-			species : String,
-			months : List[String]
-		):                                                  IO[NotFound, String]
-		def finalizeUserCreation(
-		    username: String,
-			id : Int,
-			avatar : String
-		):                                                  IO[NotFound, String]
-
-		def acknowledgeTransaction(
-			username : String,
-			business : String,
-			quantity : Int,
-			marketPrice: Int,
-			totalBells: Int
-		):                                                  IO[NotFound, String]
-
 
 		//--TurnipTransaction--
 		//Queries
@@ -76,6 +56,33 @@ object Service {
 		def getFishByName(name : String):                   IO[NotFound, Fish]
 		def getFishByRandom(months : List[String]):         IO[NotFound, Fish]
 
+		//Mutations
+		def catchCreature(
+			 username: String,
+			 species : String,
+			 months : List[String]
+		):                                                  IO[NotFound, String]
+		def finalizeUserCreation(
+			username: String,
+			id : Int,
+			avatar : String
+		):                                                  IO[NotFound, String]
+
+		def acknowledgeTransaction(
+			username : String,
+			business : String,
+			quantity : Int,
+			marketPrice: Int,
+			totalBells: Int
+		):                                                  IO[NotFound, String]
+
+		def sellOneCreature(
+		    username: String,
+		    species : String,
+		    creatureName : String
+		):                                                  UIO[Int]
+
+		def sellAllCreatures(username : String):            UIO[Int]
 	}
 
 	class CBS extends CrossingBotService{
@@ -91,36 +98,6 @@ object Service {
 			val turnipTransaction = Await.result((userActor ? UserActor.Read_One_User_With_Pending_Turnip_Transaction(username, business, quantity)).mapTo[TurnipTransaction], 2 seconds)
 			IO.succeed(turnipTransaction)
 		}
-
-		//Mutations
-		def catchCreature(username: String, species: String, months: List[String]): IO[NotFound, String] = {
-			val status = Await.result((userActor ? UserActor.Update_One_User_With_Creature(username, species, months)).mapTo[String], 4 seconds)
-			if(status == "Success"){
-				IO.succeed("Success")
-			}else{
-				IO.fail(NotFound(""))
-			}
-		}
-
-		def finalizeUserCreation(username: String, id: Int, avatar: String): IO[NotFound, String] = {
-			val status = Await.result((userActor ? UserActor.FinalizeUserCreation(username, id, avatar)).mapTo[String], 4 seconds)
-			if(status == "Success"){
-				IO.succeed("Success")
-			}else{
-				IO.fail(NotFound(""))
-			}
-
-		}
-
-		def acknowledgeTransaction(username : String, business: String, quantity : Int, marketPrice: Int, totalBells: Int) : IO[NotFound, String] = {
-			val status = Await.result((userActor ? UserActor.Update_One_User_With_Executing_Turnip_Transaction(username, business, quantity, marketPrice, totalBells)).mapTo[String], 3 seconds)
-			if(status == "Success"){
-				IO.succeed("Success")
-			}else{
-				IO.fail(NotFound(""))
-			}
-		}
-
 		//--MovementRecord--
 		def getDayRecords: UIO[MovementRecord] = {
 			val movementRecord = Await.result((marketActor ? MarketActor.Read_Latest_Movement_Record_Day).mapTo[MovementRecord], 2 seconds)
@@ -199,5 +176,45 @@ object Service {
 			if(fish.id != -1) IO.succeed(fish)
 			else IO.fail(NotFound(""))
 		}
+		//Mutations
+		def catchCreature(username: String, species: String, months: List[String]): IO[NotFound, String] = {
+			val status = Await.result((userActor ? UserActor.Update_One_User_With_Creature(username, species, months)).mapTo[String], 4 seconds)
+			if(status == "Success"){
+				IO.succeed("Success")
+			}else{
+				IO.fail(NotFound(""))
+			}
+		}
+
+		def finalizeUserCreation(username: String, id: Int, avatar: String): IO[NotFound, String] = {
+			val status = Await.result((userActor ? UserActor.FinalizeUserCreation(username, id, avatar)).mapTo[String], 4 seconds)
+			if(status == "Success"){
+				IO.succeed("Success")
+			}else{
+				IO.fail(NotFound(""))
+			}
+
+		}
+
+		def acknowledgeTransaction(username : String, business: String, quantity : Int, marketPrice: Int, totalBells: Int) : IO[NotFound, String] = {
+			val status = Await.result((userActor ? UserActor.Update_One_User_With_Executing_Turnip_Transaction(username, business, quantity, marketPrice, totalBells)).mapTo[String], 3 seconds)
+			if(status == "Success"){
+				IO.succeed("Success")
+			}else{
+				IO.fail(NotFound(""))
+			}
+		}
+
+		def sellOneCreature(username: String, species : String, creatureName : String): UIO[Int] = {
+			val bells = Await.result((userActor ? UserActor.Delete_One_Creature_From_Pocket(username, species, creatureName)).mapTo[Int], 3 seconds)
+			IO.succeed(bells)
+
+		}
+
+		def sellAllCreatures(username : String): UIO[Int] = {
+			val bells = Await.result((userActor ? UserActor.Delete_All_Creatures_From_Pocket(username)).mapTo[Int], 3 seconds)
+			IO.succeed(bells)
+		}
+
 	}
 }

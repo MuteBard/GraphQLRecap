@@ -23,8 +23,8 @@ object UserActor {
 	case class FinalizeUserCreation(username:  String, id : Int, avatar : String)
 	case class Update_One_User_With_Executing_Turnip_Transaction(username : String, business: String, quantity : Int, marketPrice: Int, totalBells: Int)
 	case class Update_One_User_With_Creature(username : String, species: String, months : List[String])
-	case class Delete_One_Creature_From_Pocket(selling : sellCreatureArgs)
-	case class Delete_All_Creature_From_Pocket(selling : sellCreatureArgs)
+	case class Delete_One_Creature_From_Pocket(username: String, species : String, creatureName : String)
+	case class Delete_All_Creatures_From_Pocket(username: String)
 }
 
 class UserActor extends Actor with ActorLogging{
@@ -97,7 +97,7 @@ class UserActor extends Actor with ActorLogging{
 				sender() ! TurnipTransaction(business, 0, 0, 0, "Unauthorized: User does not exist")
 			}
 
-		case Update_One_User_With_Executing_Turnip_Transaction(username : String, business: String, quantity : Int, marketPrice: Int, totalBells: Int) =>
+		case Update_One_User_With_Executing_Turnip_Transaction(username, business, quantity, marketPrice, totalBells) =>
 			log.info(s"[Update_One_User_With_Executing_Turnip_Transaction] Confirming pending transaction")
 			val user = UserOperations.readOneUser(username).head
 			if(user.liveTurnips.business == ""){
@@ -191,7 +191,7 @@ class UserActor extends Actor with ActorLogging{
 			}
 
 		case Update_One_User_With_Creature(username, species, months) =>
-			if(species.toLowerCase() == "bug"){
+			if(species.toLowerCase() == BUG){
 				val bug = Await.result((bugActor ? BugActor.Read_One_Bug_By_Random(months)).mapTo[Bug], 2 seconds)
 				log.info(s"[Update_One_User_With_Creature] Verifying if USER with username $username exists")
 				val user = UserOperations.readOneUser(username)
@@ -209,7 +209,7 @@ class UserActor extends Actor with ActorLogging{
 					log.info(s"[Update_One_User_With_Creature] month entered is invalid")
 					sender() ! "Failed"
 				}
-			}else if(species.toLowerCase() == "fish"){
+			}else if(species.toLowerCase() == FISH){
 				val fish = Await.result((fishActor ? FishActor.Read_One_Fish_By_Random(months)).mapTo[Fish], 2 seconds)
 				log.info(s"[Update_One_User_With_Creature] Verifying if USER with username $username exists")
 				val user = UserOperations.readOneUser(username)
@@ -232,7 +232,7 @@ class UserActor extends Actor with ActorLogging{
 				sender() ! "Failed"
 			}
 
-		case FinalizeUserCreation(username, id , avatar) =>
+		case FinalizeUserCreation(username, id, avatar) =>
 			log.info(s"[FinalizeUserCreation] retrieving user $username")
 			val user = UserOperations.readOneUser(username)
 			if(user.nonEmpty){
@@ -245,25 +245,27 @@ class UserActor extends Actor with ActorLogging{
 			}
 
 
-		case Delete_One_Creature_From_Pocket(selling) =>
-			log.info(s"[Delete_One_Creature_From_Pocket] Selling and deleting ${selling.creaturename} in ${selling.username}'s pocket")
-			if (selling.species == BUG){
-				val bells =  Await.result((bugActor ? BugActor.Read_One_Bug_By_Name(selling.creaturename)).mapTo[Bug], 3 seconds).bells
-				UserOperations.deleteOneForUser(selling, bells)
-				sender() ! bells
-			}else if (selling.species == FISH){
-				val bells = Await.result((fishActor ? FishActor.Read_One_Fish_By_Name(selling.creaturename)).mapTo[Fish], 3 seconds).bells
-				UserOperations.deleteOneForUser(selling, bells)
-				sender() ! bells
+		//TODO Prone to 404s
+		case Delete_One_Creature_From_Pocket(username, species, creatureName) =>
+			log.info(s"[Delete_One_Creature_From_Pocket] Selling and deleting ${creatureName} in ${username}'s pocket")
+			if (species == BUG){
+				//TODO consider using options here
+				val creatureBells =  Await.result((bugActor ? BugActor.Read_One_Bug_By_Name(creatureName)).mapTo[Bug], 3 seconds).bells
+				UserOperations.deleteOneForUser(username, creatureName, creatureBells)
+				sender() ! creatureBells
+			}else if (species == FISH){
+				//TODO consider using options here
+				val creatureBells = Await.result((fishActor ? FishActor.Read_One_Fish_By_Name(creatureName)).mapTo[Fish], 3 seconds).bells
+				UserOperations.deleteOneForUser(username, creatureName, creatureBells)
+				sender() ! creatureBells
 			}
 
-		//Todo remove comments
-		case Delete_All_Creature_From_Pocket(selling) =>
-			log.info(s"[Delete_All_Creature_From_Pocket] Selling and deleting all creatures from ${selling.username}'s pocket")
-			//			val bugBells =  Await.result((bugActor ? BugActor.Read_One_By_Name(selling.creature)).mapTo[Bug], 3 seconds).bells
-			//			val fishBells = Await.result((fishActor ? FishActor.Read_One_By_Name(selling.creature)).mapTo[Fish], 3 seconds).bells
-			//			val creatureBells = bugBells + fishBells
-			sender() ! UserOperations.deleteAllForUser(selling)
+
+		//TODO Prone to 404s
+		case Delete_All_Creatures_From_Pocket(username) =>
+			log.info(s"[Delete_All_Creature_From_Pocket] Selling and deleting all creatures from $username's pocket")
+			val creatureBells = UserOperations.deleteAllForUser(username)
+			sender() ! creatureBells
 	}
 
 }
